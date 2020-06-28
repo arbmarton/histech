@@ -1,24 +1,23 @@
 #pragma once
 
-namespace histech
-{
+namespace histech {
 
-template<typename T>
-void memcpy(T* from, T* to, long size)
+template <typename T>
+void memcpy(T* from, T* to, const long size)
 {
-	for (int i = 0; i < size; ++i)
-	{
-		to[i] = from[i];
-	}
+    for (long i = 0; i < size; ++i)
+    {
+        to[i] = from[i];
+    }
 }
 
-template<typename T>
-void memset(T* from, long size, const T val)
+template <typename T, typename R>
+void memset(T* from, const long size, const R val)
 {
-	for (int i = 0; i < size; ++i)
-	{
-		from[i] = val;
-	}
+    for (long i = 0; i < size; ++i)
+    {
+        from[i] = val;
+    }
 }
 
-}
+}  // namespace histech
