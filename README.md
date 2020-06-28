@@ -7,6 +7,7 @@ The main problem I see with my implementation is that the node search is in line
 The main upside of this implementation is the contiguous allocation: this means that if we are careful about the order of the insertion of our pictures they will be right next to eachother in memory. Since the use of the pictures will be most likely sequential we could write a function to give us access to the memory chunk in the cache in which we are interested (e.g.: the memory chunk belonging to a given slide), and this would mean that the memory access is very cache-miss optimal, and we dont have to deal with the linear lookup time too much: just lookup the first image and you get the rest by knowing the size of the region we are interested in.
 
 Summary:
+
 cons:
 - linear lookup time (can be improved with a better underlying bookkeeper structure)
 - no proper error handling because of the exercise limitations
